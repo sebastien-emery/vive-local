@@ -27,15 +27,15 @@ export default function DisplayCompany() {
   const dispatch = useDispatch();
 
   const { idPro } = useParams();
-  console.log('Id Company : ', idPro);
+  // console.log('Id Company : ', idPro);
 
   // State
   const company = useSelector((state) => state.appLvl.oneCompany);
-  console.log('State oneCompany : ', company);
+  // console.log('State oneCompany : ', company);
   const { settingsInfos } = useSelector((state) => state.toggle);
   const { token } = useSelector((state) => state.authent);
   const mainImg = company.image;
-  console.log('mainImg : ', mainImg);
+  // console.log('mainImg : ', mainImg);
 
   // Functions handle
   const handleClickInfos = () => {
@@ -43,9 +43,9 @@ export default function DisplayCompany() {
   };
 
   const { favorite } = useSelector((state) => state.user);
-  console.log('favorite : ', favorite);
+  // console.log('favorite : ', favorite);
   const checkFav = favorite.find((el) => el.company_id === Number(idPro));
-  console.log('favorite check : ', checkFav);
+  // console.log('favorite check : ', checkFav);
 
   const handleAddFav = () => {
     const actionAdd = {

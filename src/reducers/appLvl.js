@@ -56,7 +56,7 @@ const appLvl = (state = initialState, action = {}) => {
     }
 
     case appT.COUNT_PROFESSIONAL_SUCCESS: {
-      console.log('STATE appLvl COUNT : ', action.payload);
+      // console.log('STATE appLvl COUNT : ', action.payload);
       return {
         ...state,
         count: action.payload,

@@ -39,10 +39,10 @@ const userMW = (store) => (next) => async (action) => {
 
     case userT.DELETE_FAVORITES: {
       const idFav = action.payload;
-      console.log('ID Favorites to del : ', idFav);
+      // console.log('ID Favorites to del : ', idFav);
       try {
         const res = await axios.delete(`${server}/user/favorites/${idFav}/${userId}`, headerOptions);
-        console.log('DELETE FAVORITES : ', res.data);
+        // console.log('DELETE FAVORITES : ', res.data);
 
         store.dispatch(actionDelFavoritesSuccess(idFav));
       }
@@ -60,7 +60,7 @@ const userMW = (store) => (next) => async (action) => {
       // console.log('dataToSend : ', dataToSend);
       try {
         const res = await axios.post(`${server}/user/favorites/${userId}`, dataToSend, headerOptions);
-        console.log('ADD FAVORITES : ', res.data);
+        // console.log('ADD FAVORITES : ', res.data);
 
         // const resolvePromise = new Promise((resolve) => setTimeout(resolve, 3000));
 
@@ -86,9 +86,9 @@ const userMW = (store) => (next) => async (action) => {
 
     case userT.GET_FAVORITES: {
       try {
-        console.log('Request address Add Favorites : ', `${server}/user/favorites/${userId}`);
+        // console.log('Request address Add Favorites : ', `${server}/user/favorites/${userId}`);
         const res = await axios.get(`${server}/user/favorites/${userId}`, headerOptions);
-        console.log('GET FAVORITES : ', res.data);
+        // console.log('GET FAVORITES : ', res.data);
         store.dispatch(actionGetFavoritesSuccess(res.data));
       }
       catch (err) {
@@ -144,7 +144,7 @@ const userMW = (store) => (next) => async (action) => {
         delete dataToSend.password2;
         const res = await axios.patch(`${server}/home/writeUserProfile/${userId}`, dataToSend, headerOptions);
         window.history.back();
-        console.log('updateUser', res.data);
+        // console.log('updateUser', res.data);
         /* we update user in state */
         store.dispatch(actionAuthentSuccess(res.data));
       }

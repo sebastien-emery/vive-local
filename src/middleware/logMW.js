@@ -29,7 +29,7 @@ const logMiddleware = (store) => (next) => async (action) => {
         const res = await axios.get(`${server}/home/users/${id}`, {
           headers: { Authorization: token },
         });
-        console.log('access with token', res.data);
+        // console.log('access with token', res.data);
         const { role } = res.data;
         /* we send data from  localstorage (action.payload) containing
         token and id, and we add user data (res.data). Send to store ! */
@@ -60,7 +60,7 @@ const logMiddleware = (store) => (next) => async (action) => {
           });
         const token = res.headers.authorization;
         /* if succeeded let’s store in state and local storage : token and user minimum info */
-        console.log('AUTHENT RETURN', res.data);
+        // console.log('AUTHENT RETURN', res.data);
         store.dispatch(actionAuthentSuccess({ token, ...res.data }));
       }
       catch (e) {
@@ -74,7 +74,7 @@ const logMiddleware = (store) => (next) => async (action) => {
       try {
         /* we get input data from register form, in state */
         const dataToSend = store.getState().input.register;
-        console.log('WHO ?', dataToSend);
+        // console.log('WHO ?', dataToSend);
 
         /* we check if mail inputs are alike or throw error */
         const { password, password2 } = dataToSend;
@@ -89,9 +89,9 @@ const logMiddleware = (store) => (next) => async (action) => {
             headers: { 'Content-Type': 'application/json' },
           });
         const user = res.data;
-        console.log('REGISETERED WHO', user);
+        // console.log('REGISETERED WHO', user);
         const token = res.headers.authorization;
-        console.log(token);
+        // console.log(token);
         store.dispatch(actionAuthentSuccess({ token, ...user }));
       }
       catch (e) {

@@ -26,20 +26,20 @@ const ItemEditFields = ({ productId }) => {
   // const toggle = useSelector((state) => state.toggle.products[productId]);
   const nameSpace = `editProduct-${productId}`;
   const { price_kg } = useSelector(selectorOneProductInputs(productId));
-  console.log('price_kg check', price_kg);
+  // console.log('price_kg check', price_kg);
   const dispatch = useDispatch();
 
   // Function Handle
   const handleSubmitForm = (e) => {
     e.preventDefault();
     // console.log("productId in ItemEditFields",productId);
-    console.log(e.target);
+    // console.log(e.target);
     dispatch(actionUpdateItemCard(productId));
     dispatch(actionProductEditionToggleOff(productId));
   };
   const handleChangeRadio = (e) => {
     const boolValue = normalizeBoolean(e.target.value);
-    console.log('check unit', boolValue);
+    // console.log('check unit', boolValue);
     dispatch(actionSetInput(`editProduct-${productId}`, 'price_kg', boolValue));
   };
   const handleClickCancel = () => {

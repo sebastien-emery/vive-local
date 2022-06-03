@@ -35,13 +35,13 @@ const UpdateUser = () => {
 
   /* we populate fields with state when user is loaded */
   useEffect(() => {
-    console.log('FILL please');
+    // console.log('FILL please');
     dispatch(actionFillEditUserInputs());
   }, [user]);
 
   const handleSave = (e) => {
     e.preventDefault();
-    console.log('PLEASE IMPLEMENT SAVE');
+    // console.log('PLEASE IMPLEMENT SAVE');
     dispatch(actionSaveUserProfile());
   };
   const handleCancel = () => {

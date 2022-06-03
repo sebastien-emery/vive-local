@@ -11,7 +11,7 @@ import { searchT } from '../action-types';
 // import { actionAuthentSuccess } from '../actions/authent';
 
 const accessMiddleware = (store) => (next) => async (action) => {
-  console.log('accessMW', action.type);
+  // console.log('accessMW', action.type);
   switch (action.type) {
     case searchT.GET_PROFESSIONAL:
       try {

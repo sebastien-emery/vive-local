@@ -51,7 +51,7 @@ const productMW = (store) => (next) => async (action) => {
         const res = await axios.post(`${server}/items/${userId}`, dataToSend, headerOptions);
         /* we don’t want null in image but empty string ? */
         if (!res.data.image) res.data.image = '';
-        console.log(res.data);
+        // console.log(res.data);
         store.dispatch(actionsProductSuccess(res.data));
       }
       catch (error) {
@@ -96,7 +96,7 @@ const productMW = (store) => (next) => async (action) => {
       dataToSend = shapedObject(productShape, dataToSend);
       // if (dataToSend.image === null) dataToSend.image = { defaultImage };
       if (dataToSend.image === null || dataToSend.image.length === 0) dataToSend.image = 'default';
-      console.log('TO UPDATE', dataToSend);
+      // console.log('TO UPDATE', dataToSend);
       try {
         const res = await axios.post(`${server}/items/${userId}`, dataToSend, headerOptions);
         store.dispatch(actionUpdateItemCardSuccess(res.data));

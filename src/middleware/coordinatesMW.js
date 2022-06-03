@@ -76,7 +76,7 @@ const coordinatesMiddleware = (store) => (next) => async (action) => {
       // console.log(idPro);
       try {
         const res = await axios.get(`${server}/companies/${idPro}`, headerOptions);
-        console.log('RES get one pro : ', res.data);
+        // console.log('RES get one pro : ', res.data);
         store.dispatch(actionGetOneProSuccess(res.data));
       }
       catch (err) {

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const ButtonFav = ({ pathImage, fav }) => {
-  console.log('pathImage : ', pathImage);
+  // console.log('pathImage : ', pathImage);
   return (
     <div
       className="displaycompany__favorites"

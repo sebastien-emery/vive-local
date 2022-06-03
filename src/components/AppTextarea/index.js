@@ -22,7 +22,7 @@ const AppTextarea = (props) => {
   delete usableProps.nameSpace;
 
   const handleSetValue = (e) => {
-    console.log("content", e.target.value);
+    // console.log("content", e.target.value);
     dispatch(actionSetInput(nameSpace, name, e.target.value));
   };
 

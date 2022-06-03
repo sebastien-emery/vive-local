@@ -20,7 +20,7 @@ const UpPhoto = ({ productId, spinnerColor, className }) => {
   const inputRef = useRef();
 
   const handleImport = (e) => {
-    console.log('EVENT', e);
+    // console.log('EVENT', e);
     if (e.target.files.length !== 0) dispatch(actionUploadPic(e.target.files[0], productId));
   };
 

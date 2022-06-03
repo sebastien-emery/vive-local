@@ -1,10 +1,6 @@
 /* we import action types */
 import { searchT } from '../action-types';
 
-// Coordonnées O'Clock :
-// x: 2.287592,
-// y: 48.862725,
-
 /* based on :
 http://www.movable-type.co.uk/scripts/latlong.html
 This function calculates distance between 2 points on earth.

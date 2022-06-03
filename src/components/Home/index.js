@@ -23,7 +23,7 @@ export default function Home() {
   const count = useSelector((state) => state.appLvl.count);
   // const scrollVal = useSelector((state) => state.appLvl.scrollVal);
   const checkConnexion = useSelector((state) => state.authent.token);
-  console.log('checkConnexion : ', checkConnexion);
+  // console.log('checkConnexion : ', checkConnexion);
 
   useEffect(() => {
     dispatch(actionCountPro());

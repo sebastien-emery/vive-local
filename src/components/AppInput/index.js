@@ -25,7 +25,7 @@ const AppInput = (props) => {
   // console.log('value', value);
   /* on input value change, we update state */
   const handleChange = (e) => {
-    console.log(name, e.target.value);
+    // console.log(name, e.target.value);
     dispatch(actionSetInput(nameSpace, name, e.target.value));
   };
 

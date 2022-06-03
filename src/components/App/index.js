@@ -44,7 +44,7 @@ const App = () => {
   /* We authent user with token if possible */
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem('maraicher'));
-    console.log('got from local', storedData);
+    // console.log('got from local', storedData);
     if (storedData && storedData !== 'null') {
       // dispatch(actionAuthentSuccess(storedData));
       dispatch(actionAuthentWithToken(storedData));

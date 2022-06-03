@@ -90,10 +90,10 @@ const companyMW = (store) => (next) => async (action) => {
       let dataToSend = { ...company, ...fields };
       dataToSend = shapedObject(companyShape, dataToSend);
       if (dataToSend.image === null) dataToSend.image = 'default';
-      console.log('DATA TO SEND AFTER RESHAPE', dataToSend);
+      // console.log('DATA TO SEND AFTER RESHAPE', dataToSend);
       try {
         const res = await axios.post(`${server}/companies/${userId}`, dataToSend, headerOptions);
-        console.log('DATA RES', res.data);
+        // console.log('DATA RES', res.data);
         store.dispatch(actionsEditingDisplay(res.data));
       }
       catch (error) {

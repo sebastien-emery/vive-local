@@ -22,7 +22,7 @@ const fileMiddleware = (store) => (next) => async (action) => {
         next(action);
         /* we let action pass in order to handle loader if any */
         // next(action);
-        console.log('PAYLOAD', action.payload);
+        // console.log('PAYLOAD', action.payload);
         const { file, productId } = action.payload;
         const userId = store.getState().user.id;
         const companyId = store.getState().company.id;
@@ -43,7 +43,7 @@ const fileMiddleware = (store) => (next) => async (action) => {
         form.set('company_id', companyId);
         if (productId) form.set('product_id', productId);
 
-        console.log(form);
+        // console.log(form);
 
         const res = await axios.post(`${server}/api/upload/${userId}`, form,
           {
@@ -52,8 +52,8 @@ const fileMiddleware = (store) => (next) => async (action) => {
               Authorization: store.getState().authent.token,
             },
           });
-        console.log('IMG SUCCESS UPLOAD ?', res.data);
-        console.log(actionUploadPicSuccess(res.data, productId));
+        // console.log('IMG SUCCESS UPLOAD ?', res.data);
+        // console.log(actionUploadPicSuccess(res.data, productId));
         /* we only send the path */
         store.dispatch(actionUploadPicSuccess(res.data.image, productId));
       }
