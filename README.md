@@ -1,4 +1,4 @@
-# Projet Apothéose : Un Maraîcher près de chez vous 
+# Projet Apothéose : Vive Local 
 
 
 ## Présentation :
